@@ -1,3 +1,31 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+index:
+   path: /
+   controller: App\Controller\DefaultController::index
+
+login:
+   path: /login
+   controller: App\Controller\LoginController::login
+
+register:
+   path: /register
+   controller: App\Controller\RegistrationController::register
+
+profile_index:
+   path: /profile
+   controller: App\Controller\EditProfileController::profile_index
+
+profile:
+   path: /profile/{id}
+   controller: App\Controller\EditProfileController::edit
+
+unsubscribe:
+   path: /profile/unsubscribe/{id}
+   controller: App\Controller\EditProfileController::unsubscribe
+
+film:
+   path: /film
+   controller: App\Controller\SearchFilmController::search
+
+film_info:
+   path: /film/{id}
+   controller: App\Controller\SearchFilmController::describe

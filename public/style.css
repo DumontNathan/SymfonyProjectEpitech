@@ -1,0 +1,230 @@
+
+#poulefilms
+{
+    font-family: 'Ultra', serif;
+    font-size: 1.5em;
+}
+
+body
+{
+    font-family: 'Raleway', sans-serif;
+}
+
+nav img
+{
+    height: 40px;
+}
+
+.big-container
+{
+    display: flex;
+    justify-content: center;
+}
+
+.form-container{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: -1px 20px 64px -27px rgba(0,0,0,0.75);
+    background: whitesmoke;
+    margin-top: 40px;
+    padding: 10px;
+   }
+    
+form{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+   }
+
+.log
+{
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+#logged-name
+{
+    display: flex;
+    color: white;
+    align-items: center;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+#log
+{
+    display: flex;
+    margin-right: 10px;
+}
+
+.navbar
+{
+    box-shadow: 0px 0px 31px 2px rgba(0,0,0,0.75);
+}
+
+.edit-container
+{
+    display: flex;
+}
+
+.edit-button
+{
+    margin-left: 5px;
+}
+
+#delete-btn
+{
+    margin-top: 10px;
+}
+
+.info-container
+{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.movie-container
+{
+    width: 80%;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: -1px 20px 64px -27px rgba(0,0,0,0.75);
+    background: whitesmoke;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 10px;
+}
+
+.movie
+{
+    border: 1px solid black;
+    border-radius: 5px;
+    background: white;
+    width: 30%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.movie-info
+{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 40%;
+    border: 1px solid black;
+    border-radius: 5px;
+    background: white;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    box-shadow: -1px 20px 64px -27px rgba(0,0,0,0.75);
+}
+
+.synopsis
+{
+    padding: 5px;
+    width: 90%;
+    border: 1px solid black;
+    background: whitesmoke;
+}
+
+.result-container
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+}
+
+.movie-poster
+{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border: 1px solid black;
+    box-shadow: 3px 3px 51px -1px rgba(0,0,0,0.2);
+}
+
+#star
+{
+    height: 20px;
+    margin-bottom: 10px;
+}
+
+#info
+{
+    margin-bottom: 20px;
+}
+
+#favorite
+{
+    margin-bottom: 20px;
+}
+
+.header
+{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #005660;
+    color: white;
+    border-bottom: 1px solid black;
+}
+
+.header-info
+{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #005660;
+    color: white;
+    border-bottom: 1px solid black;
+}
+
+.header-info h1
+{
+    font-size: 4em;
+}
+
+.notfound
+{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.notfound img
+{
+    margin-top: 40px;
+}
+
+.details
+{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.details p
+{
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 0.8em;
+    border: 1px solid white;
+    padding: 5px;
+    box-shadow: 3px 3px 51px -1px rgba(0,0,0,0.2);
+}
+
+.other-infos
+{
+    margin-top: 10px;
+}

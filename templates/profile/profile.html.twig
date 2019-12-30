@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit{% endblock %}
+
+{% block body %}
+<div class="form-container">
+    <h1>Hello {{ app.user.username }} !</h1>
+    <br>
+    <h3>Want to edit your profile ?</h3>
+    <br>
+    {{ form_start(EditProfileForm) }}
+        {{ form_row(EditProfileForm.email) }}
+        {{ form_row(EditProfileForm.firstName) }}
+        {{ form_row(EditProfileForm.lastName) }}
+        {{ form_row(EditProfileForm.username) }}
+        {{ form_row(EditProfileForm.newPassword.first) }}
+        {{ form_row(EditProfileForm.newPassword.second) }}
+        {# {{ form_row(EditProfileForm.plainPassword) }}#}
+        <button class="btn btn-outline-success">Edit</button>   
+    {{ form_end(EditProfileForm) }}
+    <button class="btn btn-danger" id="delete-btn" data-id="{{ app.user.id }}">Unsubscribe</button>
+</div>
+{% endblock %}
+

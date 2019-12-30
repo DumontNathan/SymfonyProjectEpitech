@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Films{% endblock %}
+
+{% block body %}
+
+<a class="nav-link" href="http://127.0.0.1:8000/film?search={{ search }}">Back to search</a>
+
+<div class="movie-info">
+
+    <div class="header-info">
+        <h1>{{ movies['Title'] }}</h3>
+        <h5>{{ movies['Year'] }}</h5>
+        <div class="details">
+        <p>{{ movies['Runtime'] }}</p><p>{{ movies['Genre'] }}</p><p>Type : {{ movies['Type'] }}</p>
+        </div>
+    </div>
+
+    <div class="movie-img-container">
+    {% if movies['Poster'] != "N/A" %}
+        <img src="{{ movies['Poster'] }}" class="movie-poster"><br>
+        {% else %}
+        <img src="img/logo-film.png" class="movie-poster"><br>
+    {% endif %}
+    </div>
+
+    <div class="info-container">
+        Actors: {{ movies['Actors'] }}
+        <div class="synopsis">
+        <h4>Synopsis :</h4>
+        <p>{{ movies['Plot'] }}</p>
+        </div>
+
+        <div class="other-infos">
+        <div><img src="{{ asset('img/star.png')}}" id="star"> : {{movies['Ratings'][0]['Value']}}</div>
+        <p>Movie Director: {{ movies['Director'] }}</p>
+        <p>Movie Writer: {{ movies['Writer'] }}</p>
+        <p>Country: {{ movies['Country'] }}</p>
+        <p>Language: {{ movies['Language'] }}</p>
+        </div>
+        <button class="btn btn-outline-danger" data-toggle="tooltip" data-placement="bottom" title="Add to favorites" id="favorite">+</button>
+    </div>
+    
+</div>
+ {% endblock %}
+         {% block javascripts %}
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script type="text/javascript"> 
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+            });
+        </script>    
+        {% endblock %}

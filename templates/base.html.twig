@@ -3,10 +3,62 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{ asset('style.css') }}">
+        <link href="https://fonts.googleapis.com/css?family=Ultra&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">{% endblock %}
     </head>
     <body>
+
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color : #005660;">
+<a class="navbar-brand" href="{{ path('index') }}"><img src="{{ asset('img/logo-poule.png')}}" id="logo"></a>
+  <a class="navbar-brand" href="{{ path('index') }}" id="poulefilms">PouleFilms</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      {% if app.user %}
+      <li class="nav-item">
+        <a class="nav-link" href="{{ path('profile_index') ~ "/"}}">Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Favorites</a>
+      </li>
+      {% endif %}
+    </ul>
+          {% if app.user %}
+                <div class="nav-item" id="log">
+                <span id="logged-name">You are logged in as {{ app.user.username }}.</span>
+                <form action="{{ path('app_logout') }}" class="form-inline">
+                <button class="btn btn-outline-success my-2 my-sm-0">Logout</button>
+                </form>
+                </div>
+          {% else %}  
+                <div class="nav-item" id="log">
+                    <form action="{{ path('login') }}" class="form-inline">
+                    <button class="btn btn-outline-success my-2 my-sm-0" class"log">Login</button>
+                    </form>
+                    <span id="logged-name">or</span>
+                    <form action="{{ path('register') }}" class="form-inline">
+                    <button class="btn btn-outline-success my-2 my-sm-0" class"log">Register here</button>
+                     </form>
+                </div>        
+        {% endif %}
+    <form class="form-inline my-2 my-lg-0" action="{{ path('film') }}">
+      <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search for a movie..." aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+      <div class="big-container">
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+   
+      </div>  
+      {% block javascripts %}
+        <script src="{{ asset('js/main.js') }}"></script>
+      {% endblock %}
     </body>
 </html>
